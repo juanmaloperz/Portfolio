@@ -1,6 +1,7 @@
 var React = require('react');
 var Navigation = require ('Navigation');
-
+var Prueba = require('Prueba');
+var Entreno = require('Entreno');
 
 var Main = (props) =>{
   return(
@@ -8,9 +9,11 @@ var Main = (props) =>{
   <div >
       <div>
         <Navigation/>
-        <p> Main.jsx Renderes </p>
+        <p> Main.jsx Rendered </p>
     {props.children}
       </div>
+      <Prueba/>
+      <Entreno/>
     </div>
     </div>
   )
