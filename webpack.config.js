@@ -18,6 +18,7 @@ module.exports = {
     path: __dirname,
     filename: './public/bundle.js'
   },
+
   resolve: {
     root: __dirname,
     alias: {
@@ -25,8 +26,9 @@ module.exports = {
       applicationStyles: 'app/styles/app.scss',
       Navigation: 'app/components/Navigation.jsx',
       Prueba: 'app/components/Prueba.jsx',
-      Entreno: 'app/components/Entreno.jsx'
-    },
+      Entreno: 'app/components/Entreno.jsx',
+      Controls: 'app/components/Controls.jsx'
+  },
     extensions: ['', '.js', '.jsx']
   },
   module: {
