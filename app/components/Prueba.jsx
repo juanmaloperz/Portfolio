@@ -29,11 +29,11 @@ var Prueba = React.createClass({
 
     componentDidMount: function(prevProps, prevState){
     //if(this.state.status != prevState.status){
-      switch(this.state.status){
-        case 'Played':
+    //  switch(this.state.status){
+      //  case 'Played':
         this.startTime();
-        break;
-   }
+      //  break;
+  // }
   },
 
     componentDidUpdate: function (prevProps, prevState) {
