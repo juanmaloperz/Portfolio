@@ -35,10 +35,19 @@ var Prueba = React.createClass({
         break;
    }
   },
+
+    componentDidUpdate: function (prevProps, prevState) {
+      if(this.state.status != prevState.status){
+      switch (this.state.status) {
+        case 'Paused':
+        clearInterval(this.timer)
+        this.timer(undefined);
+          break;
+      }
+    }
+    },
   onChange: function(){
   this.setState({status:"Paused"})
-  clearInterval(this.timer)
-  this.timer(undefined);
 },
 
 
@@ -52,7 +61,6 @@ return(
     <img onClick={this.awayMade} src="./images/kan.jpg"/>
     <h1> {this.state.playa} Lucky wishes!!</h1>
     <h1>  You got {this.state.count} seconds on my page </h1>
-    <h2> So please put the closeCaption and dont miss what i say</h2>
     <Controls status={status} onChange={this.onPlay}/>
     </div>
   </div>

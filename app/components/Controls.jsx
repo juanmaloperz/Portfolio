@@ -6,7 +6,7 @@ var Controls = React.createClass({
        status: React.PropTypes.func.isRequired
 },
   onPlay: function(){
-      this.props.onPlay;
+      this.props.onChange(status);
 
 },
 render: function(){
