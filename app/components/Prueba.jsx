@@ -1,5 +1,4 @@
 var React = require ('react');
-var Entreno = require('Entreno');
 var Controls = require('Controls');
 
 var Prueba = React.createClass({
@@ -28,14 +27,14 @@ var Prueba = React.createClass({
   },
 
 
- /*componentDidMount: function(prevProps, prevState){
+    componentDidMount: function(prevProps, prevState){
     //if(this.state.status != prevState.status){
       switch(this.state.status){
         case 'Played':
         this.startTime();
         break;
    }
-  },*/
+  },
   onChange: function(){
   this.setState({status:"Paused"})
   clearInterval(this.timer)

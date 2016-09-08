@@ -3,7 +3,6 @@ var React = require('React');
 var Controls = React.createClass({
  propTypes: {
       // We need the status prop to change the buttons
-      onPlay: React.PropTypes.func.isRequired,
        status: React.PropTypes.func.isRequired
 },
   onPlay: function(){
