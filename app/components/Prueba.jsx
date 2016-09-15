@@ -47,7 +47,7 @@ var Prueba = React.createClass({
     }
     },
   onChange: function(){
-  this.setState({status:"Paused"})
+  this.setState({status:'Paused'});
 },
 
 
@@ -61,7 +61,7 @@ return(
     <img onClick={this.awayMade} src="./images/kan.jpg"/>
     <h1> {this.state.playa} Lucky wishes!!</h1>
     <h1>  You got {this.state.count} seconds on my page </h1>
-    <Controls status={status} onChange={this.onPlay}/>
+    <Controls status={status} onPlay={this.onChange}/>
     </div>
   </div>
 );
