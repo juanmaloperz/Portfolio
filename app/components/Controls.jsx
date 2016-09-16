@@ -8,11 +8,18 @@ var Controls = React.createClass({
 /*onPlay: function(){
       this.props.onChange();
 }, */
+
 render: function(){
   var {status} = this.props;
+  var Played =()=>{
+    if(status==="Paused"){
+    return  <button ClasName="button" onClick={this.props.onResume}> Resume </button>
+    }
+  };
 return(
 <div id="container">
   <button className="button" onClick={this.props.onPlay}> Pause  </button>
+{Played()}
 </div>
 )
 }

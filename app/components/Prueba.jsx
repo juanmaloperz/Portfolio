@@ -41,16 +41,25 @@ var Prueba = React.createClass({
       switch (this.state.status) {
         case 'Paused':
         clearInterval(this.timer)
-        this.timer(undefined);
+        this.timer = undefined;
+          break;
+        case 'Played':
+        this.startTime()
           break;
       }
     }
     },
+    componentWillUnmount: function(){
+  clearInterval(this.timer)
+  this.timer = undefined;
+},
   onChange: function(){
   this.setState({status:'Paused'});
 },
 
-
+onResumed: function(){
+  this.setState({status:'Played'})
+},
 render: function(){
   var {status} = this.state;
 return(
@@ -61,7 +70,7 @@ return(
     <img onClick={this.awayMade} src="./images/kan.jpg"/>
     <h1> {this.state.playa} Lucky wishes!!</h1>
     <h1>  You got {this.state.count} seconds on my page </h1>
-    <Controls status={status} onPlay={this.onChange}/>
+    <Controls status={status} onPlay={this.onChange}  onResume={this.onResumed}/>
     </div>
   </div>
 );
