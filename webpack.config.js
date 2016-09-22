@@ -27,7 +27,10 @@ module.exports = {
       Navigation: 'app/components/Navigation.jsx',
       Prueba: 'app/components/Prueba.jsx',
       Entreno: 'app/components/Entreno.jsx',
-      Controls: 'app/components/Controls.jsx'
+      Controls: 'app/components/Controls.jsx',
+      Resume :'app/components/Resume.jsx',
+      WeatherForm: 'app/components/WeatherForm.jsx',
+      weather: 'app/components/Weather.jsx'
   },
     extensions: ['', '.js', '.jsx']
   },

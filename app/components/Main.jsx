@@ -10,7 +10,6 @@ render:function(){
   <div >
       <div>
         <Navigation/>
-        <p> Main.jsx Rendered </p>
       </div>
       <Prueba/>
     </div>

@@ -1,5 +1,7 @@
 var React = require ('react');
 var Controls = require('Controls');
+var Resume = require('Resume');
+var WeatherForm = require('WeatherForm');
 
 var Prueba = React.createClass({
 //  var {nexCount} = this.props;
@@ -49,10 +51,10 @@ var Prueba = React.createClass({
       }
     }
     },
-    componentWillUnmount: function(){
+/*    componentWillUnmount: function(){
   clearInterval(this.timer)
   this.timer = undefined;
-},
+}, */
   onChange: function(){
   this.setState({status:'Paused'});
 },
@@ -60,19 +62,25 @@ var Prueba = React.createClass({
 onResumed: function(){
   this.setState({status:'Played'})
 },
+handleForm : function(){
+  this.setState({  place: 'place'})
+},
 render: function(){
   var {status} = this.state;
 return(
-
+<div>
+<div className="kandys">
   <div className="container">
-    <h1> Click en la imagen </h1>
-    <div className="kandys">
-    <img onClick={this.awayMade} src="./images/kan.jpg"/>
-    <h1> {this.state.playa} Lucky wishes!!</h1>
-    <h1>  You got {this.state.count} seconds on my page </h1>
+    <h1> Click on the Image for a Lucky Wish! </h1>
+    <img onClick={this.awayMade} src="./images/pez.jpg"/>
+    <h1> <strong><i>{this.state.playa} </i></strong>Lucky wishes!!</h1>
+    <h1>  You got <strong> <i> {this.state.count} </i></strong> seconds on my page </h1>
     <Controls status={status} onPlay={this.onChange}  onResume={this.onResumed}/>
     </div>
   </div>
+  <Resume/>
+  <WeatherForm/>
+</div>
 );
 }
 });

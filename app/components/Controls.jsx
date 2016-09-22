@@ -13,12 +13,13 @@ render: function(){
   var {status} = this.props;
   var Played =()=>{
     if(status==="Paused"){
-    return  <button ClasName="button" onClick={this.props.onResume}> Resume </button>
+    return  <button className="button" onClick={this.props.onResume}> Resume </button>
+    } else {
+      return   <button className="button" onClick={this.props.onPlay}> Pause  </button>
     }
   };
 return(
-<div id="container">
-  <button className="button" onClick={this.props.onPlay}> Pause  </button>
+<div>
 {Played()}
 </div>
 )

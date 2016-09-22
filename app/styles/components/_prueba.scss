@@ -1,28 +1,20 @@
-/*
-h1 {
-  text-align: center;
-}
 .kandys{
-flex: auto;
+//  background-color: yellow;
+  background-repeat: repeat;
+  background-image: url("http://res.cloudinary.com/dkr9ndsvc/image/upload/c_scale,e_grayscale,q_100,r_4,w_737/v1474038445/pez_o2z9k7.jpg");
+
 }
-
-
-
-p{
-  text-align: center;
+h1{
+  color: blue;
+  font-family: 'Indie Flower';
 }
-
-img{
-  padding-left: 400px;
-}
-*/
 
 .container{
   //padding-left: 350px;
   margin: auto;
-  width: 50%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-image: url(src="./imagenes/parqueiwoka.jpg");
+  //background-color: yellow;
 }
