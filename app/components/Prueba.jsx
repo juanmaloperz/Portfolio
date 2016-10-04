@@ -2,6 +2,8 @@ var React = require ('react');
 var Controls = require('Controls');
 var Resume = require('Resume');
 var WeatherForm = require('WeatherForm');
+var openWeatherMap = require('openWeatherMap');
+var WeatherMessage = require('WeatherMessage');
 
 var Prueba = React.createClass({
 //  var {nexCount} = this.props;
@@ -9,7 +11,8 @@ var Prueba = React.createClass({
        return{
          playa:0,
          count: 0,
-         status: 'Played'
+         status: 'Played',
+         isloading: false
        }
      },
      awayMade: function(){
@@ -17,9 +20,7 @@ var Prueba = React.createClass({
          playa: this.state.playa +1,
        })
      },
-
-
-  startTime: function(count){
+startTime: function(count){
     this.timer = setInterval(()=>{
      var nexCount= this.state.count+1;
       this.setState({
@@ -27,9 +28,7 @@ var Prueba = React.createClass({
       });
     },1000);
   },
-
-
-    componentDidMount: function(prevProps, prevState){
+componentDidMount: function(prevProps, prevState){
     //if(this.state.status != prevState.status){
     //  switch(this.state.status){
       //  case 'Played':
@@ -37,8 +36,19 @@ var Prueba = React.createClass({
       //  break;
   // }
   },
-
-    componentDidUpdate: function (prevProps, prevState) {
+handleForm : function(location){
+  var that = this;
+  openWeatherMap.getTemp(location).then(function (temp) {
+     that.setState({
+       location: location,
+       temp: temp,
+       isloading:false
+     });
+  },function(errorMessage){
+    alert(errorMessage);
+});
+},
+componentDidUpdate: function (prevProps, prevState) {
       if(this.state.status != prevState.status){
       switch (this.state.status) {
         case 'Paused':
@@ -55,18 +65,24 @@ var Prueba = React.createClass({
   clearInterval(this.timer)
   this.timer = undefined;
 }, */
-  onChange: function(){
+
+onChange: function(){
   this.setState({status:'Paused'});
 },
 
 onResumed: function(){
   this.setState({status:'Played'})
 },
-handleForm : function(){
-  this.setState({  place: 'place'})
-},
+
 render: function(){
-  var {status} = this.state;
+  var {status , location, temp, isloading} = this.state;
+function renderMessage () {
+    if(isloading){
+      return <h3> Buscando el clima... </h3>
+    } else if (temp && location){
+  return  <WeatherMessage temp={temp} location={location}/>;
+  }
+}
 return(
 <div>
 <div className="kandys">
@@ -79,7 +95,10 @@ return(
     </div>
   </div>
   <Resume/>
-  <WeatherForm/>
+  <WeatherForm onForm={this.handleForm}/>
+  <div className="wForm">
+  {renderMessage()}
+</div>
 </div>
 );
 }
