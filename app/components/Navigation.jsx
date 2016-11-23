@@ -10,13 +10,13 @@ return(
             Portfolio
           </li>
           <li>
-            <IndexLink to="/" activeClassName="active-link"> Example</IndexLink>
+            <IndexLink to="/example" activeClassName="active-link"> Example</IndexLink>
           </li>
           <li>
-            <Link to="/" activeClassName="active-link">Resume</Link>
+            <Link to="/resume" activeClassName="active-link">Resume</Link>
           </li>
           <li>
-            <Link to="/" activeClassName="active-link"> Weather</Link>
+            <Link to="/weather" activeClassName="active-link"> Weather</Link>
           </li>
         </ul>
       </div>

@@ -11,7 +11,7 @@ render:function(){
       <div>
         <Navigation/>
       </div>
-      <Prueba/>
+      {this.props.children}
     </div>
     </div>
   )
