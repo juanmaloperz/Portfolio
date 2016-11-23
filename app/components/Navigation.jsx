@@ -16,7 +16,7 @@ return(
             <Link to="/resume" activeClassName="active-link">Resume</Link>
           </li>
           <li>
-            <Link to="/weather" activeClassName="active-link"> Weather</Link>
+            <Link to="/checkbox" activeClassName="active-link"> Weather</Link>
           </li>
         </ul>
       </div>
