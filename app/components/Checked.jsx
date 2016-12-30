@@ -1,13 +1,15 @@
 var React = require('react');
 
-var Checked = React.createClass({
-	getInitialState: function () {
-  	return {
-    	isChecked: true,
-      topping: 'No Cheese'
-    }
-  },
-  render: function() {
+class Checked extends React.Component{
+constructor(props){
+	super(props);
+	this.state={
+		isChecked:true,
+		topping: 'No Cheese'
+	}
+}
+
+  render() {
     return <div>
 			<div>
         <input type="checkbox" onChange={(e) => {
@@ -17,7 +19,7 @@ var Checked = React.createClass({
       </div>
 
 			<div>
-      	<button onClick={() => {
+      	<button  className="button" onClick={() => {
           this.setState({isChecked: !this.state.isChecked});
         }}>Programmatically Toggle Checkbox</button>
       </div>
@@ -46,6 +48,6 @@ var Checked = React.createClass({
       </div>
     </div>;
   }
-});
+};
 
 module.exports = Checked;

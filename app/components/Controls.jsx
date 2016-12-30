@@ -1,6 +1,6 @@
 var React = require('react');
 
-var Controls = React.createClass({
+class Controls extends React.Component {
  /*propTypes: {
       // We need the status prop to change the buttons
        status: React.PropTypes.func.isRequired
@@ -9,7 +9,7 @@ var Controls = React.createClass({
       this.props.onChange();
 }, */
 
-render: function(){
+render(){
   var {status} = this.props;
   var Played =()=>{
     if(status==="Paused"){
@@ -24,6 +24,6 @@ return(
 </div>
 )
 }
-})
+}
 
 module.exports = Controls;

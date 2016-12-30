@@ -1,13 +1,14 @@
 var React = require('react');
 
-var Clickme = React.createClass({
-  getInitialState:function(){
-    return{
-      isChecked:true,
-    maguaj:"no playu"
-     }
-  },
-render : function(){
+class Clickme extends React.Component{
+  constructor(props){
+   super(props);
+    this.state = {
+      isChecked:true ,
+      maguaj: "no playu"
+    }
+  }
+render(){
 return(
 <div>
   <div>
@@ -16,17 +17,14 @@ return(
     }} checked={this.state.isChecked}/>
     Some checkbox
   </div>
-
-  <div>
-    <button onClick={() => {
-      this.setState({isChecked: !this.state.isChecked});
-    }}>Programmatically Toggle Checkbox</button>
-  </div>
+  <button className="button"
+  onClick={()=>{ this.setState({isChecked: !this.state.isChecked});
+}}> Change the checked item</button>
   <div>
 <label>
 <input type="radio" name="maguaj" checked={this.state.maguaj === "playu"} onChange={(e)=>{
     this.setState({maguaj:e.target.value})
-  }} value="playu"/> Playu
+  }} value="playu" /> Playu
 </label>
 <label>
   <input type="radio" name="maguaj" checked={this.state.maguaj === "no playu"} onChange={(e)=>{
@@ -40,6 +38,6 @@ return(
 </div>
 );
 }
-});
+};
 
 module.exports = Clickme;

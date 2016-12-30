@@ -1,8 +1,8 @@
 var React = require('react');
 
-var Resume = React.createClass({
+class Resume extends React.Component{
 
-render:function(){
+render(){
 return(
   <div className="police">
   <div className="rest">
@@ -16,6 +16,6 @@ return(
  </div>
 );
 }
-});
+};
 
 module.exports = Resume;

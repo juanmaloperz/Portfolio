@@ -2,9 +2,9 @@ var React = require('react');
 var Navigation = require ('Navigation');
 var Prueba = require('Prueba');
 
-var Main = React.createClass({
+class  Main extends React.Component{
 
-render:function(){
+render(){
   return(
 <div>
   <div >
@@ -16,5 +16,5 @@ render:function(){
     </div>
   )
 }
-});
+};
 module.exports = Main;
